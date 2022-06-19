@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+
+    <title>Document</title>
+</head>
+<body>
+    <p id="tes">Hare krishna</p>
+    <p id="test">This is some <b>bold</b> text in paragraph</p>
+    <p>Name: <input type="text" name="" id="geu" value="mickymouse"></p>
+    <button id="btn1">text</button>
+    <button id="btn2">html</button>
+    <button id="btn3">Value</button>
+    <button id="btn4">set value</button>
+    <button id="btn5">get attribute</button>
+    <button id="btn6">set attribute</button>
+    <button id="btn7">function attribute</button>
+    <button id="btn8">add element</button>
+    <button id="btn9">remove element</button>
+
+
+    <!-- getting attribute -->
+    <a href="//google.com" id="atr">google</a>
+
+    <script>
+        $(document).ready(function(){
+
+
+            //  fetching values 
+            $("#btn1").click(function(){
+                alert("Text:"+$("#test").text());
+            });
+            $("#btn2").click(function(){
+                alert("HTML :"+$("#test").html());
+            });
+            $("#btn3").click(function(){
+                alert("Val :"+$("#geu").val());
+            });
+
+
+            // setting value 
+
+            $("#btn4").click(function(){
+                $("#test").text("hello");
+            });
+            $("#btn4").click(function(){
+                $("#tes").html("<b>hello</b>");
+            });
+            $("#btn4").click(function(){
+                $("#geu").val("jittu");
+            });
+
+            // getting attribute
+            $("#btn5").click(function(){
+                alert($("#atr").attr("href"));
+            });
+
+            //setting attribute
+            $("#btn6").click(function(){
+                $("#atr").attr("href","geu.ac.in");
+            });
+
+            //passing function 
+            $("#btn7").click(function(){
+                    $("#atr").attr("href", function(i,origValue){
+                    return origValue+"/drive/";
+                });
+            });
+
+            // add element 
+            $("#btn8").click(function(){
+                $("#tes").append("hello")
+                $("#tes").prepend("soon")
+                $("#tes").after("be with me")
+                $("#tes").before("chalo")
+            })
+
+            // remove
+            $("#btn9").click(function(){
+                $("#geu").empty();
+                $("#geu").remove();
+            })
+
+
+            // remove filter elements 
+            $("#btn10").click(function(){
+                $("p").remove(".test,.geu");
+            })
+
+
+            // add class to elements
+            $("#btn10").click(function(){
+                $("p,h1,h2").addClass("classname");
+                $("p,h1,h2").removeClass("classname");
+                $("p,h1,h2").toggleClass("classname");
+            })
+
+            // add css
+            $("#btn10").click(function(){
+                $("p,h1,h2").css({"background-color":"yellow","font-size":"200%"});
+            })
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <title>Document</title>
+</head>
+<body>
+    <p> Hare Krishna!</p>
+    <p id="pp"> pp para</p>
+    <p id="fadeout"> fade wala ye </p>
+    <h1 id="slide">Slide Up</h1>
+
+    <div id="animate" style="height:90px;width:100px;  background-color: rgb(0, 0, 0); border: 20ch;">
+        <h1>aps</h1>
+    </div>
+    <br>
+
+    <button id="hide">hide</button>
+    <button id="btnbtn">show</button>
+    <button id="toggle">fadetoggle</button>
+    <button id="fadeto">fadeTO</button>
+    <button id="slidebtn">slide</button>
+    <button id="slidebt">slideDown</button>
+    <button id="anim">animate</button>
+    <script>
+        $(document).ready(function(){
+
+            // animation
+            $("#anim").click(function(){
+                $("#animate").animate({left: '250px',
+                opacity: '0.5',
+                height: 'toggle',
+                width: '-=150px'  
+            }); 
+            });
+
+            // slide toggel
+            $("#slidebt").click(function(){
+                $("#slide").slideToggle(1000);
+            })
+
+            // slide up
+            $("#slidebtn").click(function(){
+                $("#slide").slideUp(1000);
+            })
+
+            //fade to 
+            $("#fadeto").click(function(){
+                $("#fadeout").fadeTo(2000,0.3);
+            })
+
+            // fade toggle
+            $("#toggle").click(function(){
+                $("#fadeout").fadeToggle(3000);
+            })
+
+            // fadeout and fade in 
+            $("#fadeout").click(function(){
+                $("#fadeout").fadeOut();
+            });
+                
+
+            // mouse leave function 
+            // $("#pp").mousemove(function(){
+            //     alert("Bye! You now leave p1");
+            // });
+
+            // hide para on double click 
+            $("p").dblclick(function(){
+                $(this).hide();
+            });
+
+            $("#hide").click(function(){
+                $("p").hide(4000); // speed and callback functions 
+                // document.getElementById("btnbtn").innerHTML = "show";
+            });
+            $("#btnbtn").click(function(){
+                $("p").show(4000);
+                // document.getElementById("btnbtn").innerHTML = "show";
+            });
+        });
+    </script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  -->
+
+</body>
+</html>
