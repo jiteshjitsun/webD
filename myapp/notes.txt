@@ -1,0 +1,25 @@
+::PHP::
+
+# Backend server lanuage 
+# session variables 
+# more secured lanuage
+# community is big
+# database support 
+# open source
+# performance is better 
+# platform independent 
+# error handeling 
+
+
+//returning typecasting
+
+function addNUm(float $a,float $b):int{
+    return (int)($a+$b);
+}
+
+//
+^^Super gloabal values^^
+^_^
+
+Q. write program in php to find factorial of a number?
+Q. write a program to enter some no check for even and odd?
